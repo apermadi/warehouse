@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://3wowurxh3srk"]
+[gd_scene load_steps=5 format=3 uid="uid://bqcecwubdmvoc"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_4ygi2"]
 [ext_resource type="Texture2D" uid="uid://cmlf773q6k3xp" path="res://wooper.png" id="1_kdibq"]
-[ext_resource type="TileSet" uid="uid://dsndoih0gsug7" path="res://tiles.tres" id="3_ls82w"]
+[ext_resource type="TileSet" uid="uid://c6xh75l4kl6xt" path="res://tiles.tres" id="3_ls82w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2fov"]
 size = Vector2(86, 75)
@@ -10,7 +10,9 @@ size = Vector2(86, 75)
 [node name="world" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(126, 230)
+position = Vector2(30, 263)
+scale = Vector2(0.64, 0.64)
+collision_layer = 2
 script = ExtResource("1_4ygi2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -21,7 +23,14 @@ shape = SubResource("RectangleShape2D_m2fov")
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_kdibq")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, -167)
+limit_top = 0
+limit_bottom = 324
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [node name="walls" type="TileMap" parent="."]
 tile_set = ExtResource("3_ls82w")
 format = 2
-layer_0/tile_data = PackedInt32Array(2228225, 131072, 1, 2228226, 131072, 0, 2228229, 131072, 0, 2228228, 131072, 0, 2228227, 131072, 0, 2228231, 131072, 0, 2228230, 131072, 0, 2228233, 131072, 0, 2228232, 131072, 0, 2228235, 131072, 0, 2228234, 131072, 0, 2228237, 131072, 0, 2228236, 131072, 0, 2228239, 131072, 0, 2228238, 131072, 0, 2228242, 131072, 0, 2228241, 131072, 0, 2228240, 131072, 0, 2228244, 131072, 0, 2228243, 131072, 0, 2228245, 131072, 0, 2228247, 131072, 0, 2228246, 131072, 0, 2228248, 131072, 0, 2228249, 131072, 0, 2228250, 131072, 0, 2228251, 131072, 0, 2228252, 131072, 0, 2228253, 131072, 0, 2228254, 131072, 0, 2228255, 196608, 1)
+layer_0/tile_data = PackedInt32Array(1245184, 131072, 4, 1245185, 65536, 5, 1245186, 65536, 5, 1245187, 65536, 5, 1245188, 65536, 5, 1245189, 65536, 5, 1245190, 65536, 5, 1245191, 65536, 5, 1245192, 65536, 5, 1245193, 196608, 4, 1179657, 0, 7, 1179656, 0, 5, 1179655, 0, 5, 1179654, 0, 5, 1179653, 0, 5, 1179652, 0, 5, 1179651, 0, 5, 1179650, 0, 5, 1179649, 0, 5, 1179648, 0, 4, 1114122, 0, 4, 1179658, 65536, 7, 1114123, 0, 7, 1179659, 196608, 4, 1114124, 65536, 7, 1048588, 0, 4, 1048589, 65536, 4, 1114125, 196608, 4, 1048594, 0, 4, 1048595, 0, 5, 1048596, 0, 5, 1048597, 0, 5, 1048598, 0, 5, 1048599, 65536, 4, 1114130, 131072, 4, 1114131, 65536, 5, 1114132, 65536, 5, 1114133, 65536, 5, 1114134, 65536, 5, 1114135, 196608, 4, 1048604, 0, 4, 1114140, 131072, 4, 1114141, 65536, 11, 1048605, 65536, 4, 1114142, 65536, 4, 1179678, 65536, 6, 1179677, 131072, 4, 1179679, 0, 6, 1245215, 131072, 4, 1245216, 65536, 5, 1245217, 65536, 5, 1245218, 65536, 5, 1245219, 65536, 5, 1245220, 65536, 5, 1245221, 196608, 4, 1179685, 65536, 4, 1179684, 0, 5, 1179683, 0, 5, 1179682, 0, 5, 1179681, 0, 5, 1179680, 0, 5)
