@@ -1,13 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqcecwubdmvoc"]
+[gd_scene load_steps=5 format=3 uid="uid://3wowurxh3srk"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_4ygi2"]
 [ext_resource type="Texture2D" uid="uid://cmlf773q6k3xp" path="res://wooper.png" id="1_kdibq"]
+[ext_resource type="TileSet" uid="uid://dsndoih0gsug7" path="res://tiles.tres" id="3_ls82w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2fov"]
 size = Vector2(86, 75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_odwwb"]
-size = Vector2(40, 40)
 
 [node name="world" type="Node2D"]
 
@@ -23,9 +21,6 @@ shape = SubResource("RectangleShape2D_m2fov")
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_kdibq")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 608)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_odwwb")
+[node name="walls" type="TileMap" parent="."]
+tile_set = ExtResource("3_ls82w")
+format = 2
